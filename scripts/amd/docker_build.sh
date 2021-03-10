@@ -1,5 +1,9 @@
-# FILE_PATH=$1
-# FILE=`basename "$FILE_PATH"`
-# FILENAME="${FILE%.*}"
-# docker build --network=host -t $FILENAME -< $FILE_PATH
-docker build --network=host -t rocm/pytorch-private:rocm4.0_ubuntu18.04_py3.6_pytorch_fairseq .
+# set path
+DOCKERFILE_PATH=scripts/amd/fairseq_ibm.Dockerfile
+
+# get tag
+DOCKERFILE_NAME=$(basename $DOCKERFILE_PATH)
+DOCKERIMAGE_NAME=$(echo "$DOCKERFILE_NAME" | cut -f 1 -d '.')
+
+# build docker
+docker build -f $DOCKERFILE_PATH -t $DOCKERIMAGE_NAME .
