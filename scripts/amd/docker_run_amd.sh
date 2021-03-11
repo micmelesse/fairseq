@@ -7,7 +7,7 @@ WORK_DIR='-w /root/fairseq'
 # IMAGE_NAME=rocm/pytorch:rocm4.0_ubuntu18.04_py3.6_pytorch
 # IMAGE_NAME=rocm/pytorch:rocm4.0.1_ubuntu18.04_py3.6_pytorch
 IMAGE_NAME=fairseq_ibm
-CONTAINER_NAME=fairseq_container
+CONTAINER_NAME=${IMAGE_NAME}_container
 
 # cd repo && git clone https://github.com/huggingface/transformers && cd ..
 
